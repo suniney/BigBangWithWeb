@@ -1,6 +1,7 @@
 package com.chinaso.test.bigbangwithweb;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,6 +25,12 @@ public class WebViewActivity extends Activity {
         setContentView(R.layout.activity_webview);
         webView = (WebView) findViewById(R.id.webview);
         initWebViewSetting();
+        String word = getIntent().getStringExtra("search_words");
+        if (word != null) {
+            webView.loadUrl("https://www.baidu.com/s?wd=" + word);
+        } else {
+            webView.loadUrl("https://www.jianshu.com");
+        }
     }
 
 
@@ -52,7 +59,6 @@ public class WebViewActivity extends Activity {
         webView.clearHistory();
         webView.setWebChromeClient(new WebChromeClient() {
         });
-        webView.loadUrl("https://www.jianshu.com");
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
