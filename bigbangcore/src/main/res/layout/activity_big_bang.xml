@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_big_bang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8D9FB8"
+    android:fillViewport="true"
+    tools:context="com.chinaso.bigbang.core.BigBangActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.chinaso.bigbang.core.BigBangLayout
+            android:id="@+id/bigbang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp" />
+        <ImageView
+            android:id="@+id/bigbang_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+           android:layout_marginLeft="18dp"
+            android:src="@drawable/ic_close" />
+    </FrameLayout>
+</ScrollView>
